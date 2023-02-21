@@ -126,8 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             validator: (value) {
                               if (value == null || value.isEmpty)
                                 return "Enter email to login.";
-                              // if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value))
-                              //   return "Invalid Email.";
+                              if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value))
+                                return "Invalid Email.";
                               else
                                 null;
                             },
@@ -154,10 +154,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               validator: (value) {
                                 if (value == null || value.isEmpty)
                                   return "Enter password to login.";
-                                // if (!RegExp(
-                                //         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
-                                //     .hasMatch(value))
-                                // return "Enter valid password.";
+                                if (!RegExp(
+                                        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+                                    .hasMatch(value))
+                                return "Enter valid password.";
                                 else
                                   null;
                               },
