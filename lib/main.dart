@@ -246,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               TextSpan(
                                 text: "Sign up",
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 17),
+                                    color: Colors.deepPurple, fontSize: 17),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     Navigator.push(
