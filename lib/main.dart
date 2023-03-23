@@ -123,26 +123,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 13.0, right: 13.0),
                         child: TextFormField(
-                            validator: (value) {
-                              if (value == null || value.isEmpty)
-                                return "Enter email to login.";
-                              // if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value))
-                              //   return "Invalid Email.";
-                              else
-                                null;
-                            },
-                            controller: mlc,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              // labelText: AutofillHints.email,
-                              labelText: "Email",
-                              border: OutlineInputBorder(),
-                              hintText: 'Enter email here.',
-                              suffixIcon: (Icon(
-                                Icons.mail_sharp,
-                                color: Theme.of(context).primaryColorDark,
-                              )),
+                          validator: (value) {
+                            if (value == null || value.isEmpty)
+                              return "Enter email to login.";
+                            // if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value))
+                            //   return "Invalid Email.";
+                            else
+                              null;
+                          },
+                          controller: mlc,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            // labelText: AutofillHints.email,
+                            labelText: "Email",
+                            border: OutlineInputBorder(),
+                            hintText: 'Enter email here.',
+                            suffixIcon: (Icon(
+                              Icons.mail_sharp,
+                              color: Theme.of(context).primaryColorDark,
                             )),
+                          ),
+                        ),
                       ),
                       const SizedBox(
                         height: 25.0,
