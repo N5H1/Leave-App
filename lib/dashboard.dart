@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_leave/common.dart';
 import 'package:flutter_leave/form.dart';
-import 'package:flutter_leave/services/db_helper.dart';
 
 import 'leaveform.dart';
-import 'main.dart';
 
 class hereD extends StatefulWidget {
+  const hereD({super.key});
+
   @override
   State<hereD> createState() => _hereDState();
 }
@@ -23,7 +23,7 @@ class _hereDState extends State<hereD> {
           title: const Text("Home"),
           actions: [
             IconButton(
-              icon: Icon(Icons.logout_sharp),
+              icon: const Icon(Icons.logout_sharp),
               onPressed: () {
                 showLoAlert(context);
               },
@@ -39,7 +39,7 @@ class _hereDState extends State<hereD> {
                   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           "Menu",
                           style: TextStyle(
@@ -72,12 +72,12 @@ class _hereDState extends State<hereD> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
-                  leading: Icon(Icons.home, color: Colors.deepPurple),
+                  leading: const Icon(Icons.home, color: Colors.deepPurple),
                   title:
-                      Text("Home", style: TextStyle(color: Colors.deepPurple)),
+                      const Text("Home", style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => hereD()));
+                        MaterialPageRoute(builder: (context) => const hereD()));
                   },
                 ),
               ),
@@ -87,12 +87,12 @@ class _hereDState extends State<hereD> {
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
                   leading:
-                      Icon(Icons.note_alt_outlined, color: Colors.deepPurple),
-                  title: Text("Apply for leave",
+                      const Icon(Icons.note_alt_outlined, color: Colors.deepPurple),
+                  title: const Text("Apply for leave",
                       style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => hereL()));
+                        MaterialPageRoute(builder: (context) => const hereL()));
                   },
                 ),
               ),
@@ -102,12 +102,12 @@ class _hereDState extends State<hereD> {
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
                   leading:
-                      Icon(Icons.note_alt_outlined, color: Colors.deepPurple),
-                  title: Text("Show my form",
+                      const Icon(Icons.note_alt_outlined, color: Colors.deepPurple),
+                  title: const Text("Show my form",
                       style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => form()));
+                        MaterialPageRoute(builder: (context) => const form()));
                   },
                 ),
               ),
@@ -116,8 +116,8 @@ class _hereDState extends State<hereD> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
-                  leading: Icon(Icons.logout_sharp, color: Colors.deepPurple),
-                  title: Text("Log out",
+                  leading: const Icon(Icons.logout_sharp, color: Colors.deepPurple),
+                  title: const Text("Log out",
                       style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
                     showLoAlert(context);
@@ -136,7 +136,7 @@ class _hereDState extends State<hereD> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => hereL()),
+                    MaterialPageRoute(builder: (context) => const hereL()),
                   );
                 },
               ),

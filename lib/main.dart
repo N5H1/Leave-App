@@ -1,17 +1,13 @@
 // ignore_for_file: must_call_super
 
-import 'dart:ffi';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_leave/common.dart';
 import 'package:flutter_leave/forgotpswd.dart';
 import 'package:flutter_leave/services/pgadmin.dart';
 import 'package:flutter_leave/signup.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
-import 'package:postgres/postgres.dart';
 
 import 'dashboard.dart';
 
@@ -40,12 +36,14 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepPurple,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -62,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     obscureTextP = true;
   }
 
+  @override
   Widget build(BuildContext context) {
     Future<bool> showExitPopup() async {
       return await showDialog(
@@ -69,18 +68,18 @@ class _MyHomePageState extends State<MyHomePage> {
             //the return value will be from "Yes" or "No" options
             context: context,
             builder: (context) => AlertDialog(
-              title: Text('Exit App'),
-              content: Text('Do you want to exit an App?'),
+              title: const Text('Exit App'),
+              content: const Text('Do you want to exit an App?'),
               actions: [
                 ElevatedButton(
                   onPressed: () => Navigator.of(context).pop(true),
                   //return true when click on "Yes"
-                  child: Text('Yes'),
+                  child: const Text('Yes'),
                 ),
                 ElevatedButton(
                   onPressed: () => Navigator.of(context).pop(false),
                   //return false when click on "NO"
-                  child: Text('No'),
+                  child: const Text('No'),
                 ),
               ],
             ),
@@ -124,19 +123,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         padding: const EdgeInsets.only(left: 13.0, right: 13.0),
                         child: TextFormField(
                           validator: (value) {
-                            if (value == null || value.isEmpty)
+                            if (value == null || value.isEmpty) {
                               return "Enter email to login.";
-                            // if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value))
-                            //   return "Invalid Email.";
-                            else
+                            } else {
                               null;
+                            return null;
+                            }
                           },
                           controller: mlc,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             // labelText: AutofillHints.email,
                             labelText: "Email",
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                             hintText: 'Enter email here.',
                             suffixIcon: (Icon(
                               Icons.mail_sharp,
@@ -153,14 +152,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               const EdgeInsets.only(left: 13.0, right: 13.0),
                           child: TextFormField(
                               validator: (value) {
-                                if (value == null || value.isEmpty)
+                                if (value == null || value.isEmpty) {
                                   return "Enter password to login.";
-                                // if (!RegExp(
-                                //         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
-                                //     .hasMatch(value))
-                                // return "Enter valid password.";
-                                else
+                                } else {
                                   null;
+                                return null;
+                                }
                               },
                               controller: pwd,
                               obscureText: obscureTextP,
@@ -202,18 +199,18 @@ class _MyHomePageState extends State<MyHomePage> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsets.only(right: 13.0),
+                            padding: const EdgeInsets.only(right: 13.0),
                             child: RichText(
                               text: TextSpan(
                                 text: 'Forgot Password?',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.deepPurple, fontSize: 17),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => hereF()));
+                                            builder: (context) => const hereF()));
                                   },
                               ),
                             ),
@@ -231,7 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             operation(mlc.text, pwd.text);
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => hereD()),
+                              MaterialPageRoute(builder: (context) => const hereD()),
                             );
                           }
                         },
@@ -242,18 +239,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       RichText(
                         text: TextSpan(
                             text: "Don't have an account? ",
-                            style: TextStyle(color: Colors.black, fontSize: 17),
+                            style: const TextStyle(color: Colors.black, fontSize: 17),
                             children: <TextSpan>[
                               TextSpan(
                                 text: "Sign up",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.deepPurple, fontSize: 17),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => hereS()));
+                                            builder: (context) => const hereS()));
                                   },
                               )
                             ]),

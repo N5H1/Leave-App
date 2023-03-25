@@ -4,6 +4,8 @@ import 'package:flutter_leave/services/pgadmin.dart';
 import 'package:intl/intl.dart';
 
 class hereL extends StatefulWidget {
+  const hereL({super.key});
+
   @override
   State<hereL> createState() => _hereLState();
 }
@@ -21,7 +23,7 @@ class _hereLState extends State<hereL> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Leave application"),
+        title: const Text("Leave application"),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -37,16 +39,18 @@ class _hereLState extends State<hereL> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter date.";
-                      } else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: dtfrom,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
                         labelText: 'From',
                         hintText: "From this date",
                         suffix: IconButton(
-                          icon: Icon(Icons.calendar_month_sharp),
+                          icon: const Icon(Icons.calendar_month_sharp),
                           onPressed: () async {
                             DateTime? pickedDate = await showDatePicker(
                                 context: context,
@@ -78,16 +82,18 @@ class _hereLState extends State<hereL> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Select date.";
-                      } else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: dtto,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
                         labelText: 'To',
                         hintText: "Till this date",
                         suffix: IconButton(
-                          icon: Icon(Icons.calendar_month_sharp),
+                          icon: const Icon(Icons.calendar_month_sharp),
                           onPressed: () async {
                             DateTime? pickedDate = await showDatePicker(
                                 context: context,
@@ -119,18 +125,20 @@ class _hereLState extends State<hereL> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter total no. of days.";
-                      } else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: nod,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Number of days',
                         hintText: "Total days",
                         suffixIcon: Icon(
                           (Icons.calculate_sharp),
                         )),
-                    keyboardType: TextInputType.numberWithOptions(
+                    keyboardType: const TextInputType.numberWithOptions(
                         decimal: true, signed: false),
                   ),
                 ),
@@ -142,11 +150,13 @@ class _hereLState extends State<hereL> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Enter reason for leave.";
-                    } else
+                    } else {
                       null;
+                    return null;
+                    }
                   },
                   controller: rsn,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Reason',
                       hintText: "Mention appropriate reason",
@@ -161,7 +171,7 @@ class _hereLState extends State<hereL> {
                 padding: const EdgeInsets.only(
                     bottom: 8.0, top: 13.0, right: 13.0, left: 13.0),
                 child: Row(
-                  children: [
+                  children: const [
                     Text(
                       "Contact during leave:",
                       style: TextStyle(fontSize: 17),
@@ -178,11 +188,13 @@ class _hereLState extends State<hereL> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter contact name.";
-                      } else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: cnn,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Contact Name',
                         // hintText: "",
@@ -202,18 +214,20 @@ class _hereLState extends State<hereL> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter contact number.";
-                      } else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: cnp,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Contact Number',
                         // hintText: "",
                         suffixIcon: Icon(
                           (Icons.phone_sharp),
                         )),
-                    keyboardType: TextInputType.numberWithOptions(
+                    keyboardType: const TextInputType.numberWithOptions(
                         decimal: false, signed: false),
                   ),
                 ),
@@ -229,7 +243,7 @@ class _hereLState extends State<hereL> {
                         cnn.text, cnp.text);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => hereD()),
+                      MaterialPageRoute(builder: (context) => const hereD()),
                     );
                   }
                 },

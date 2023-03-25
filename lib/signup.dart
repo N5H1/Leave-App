@@ -4,6 +4,8 @@ import 'package:flutter_leave/main.dart';
 import 'package:flutter_leave/services/pgadmin.dart';
 
 class hereS extends StatefulWidget {
+  const hereS({super.key});
+
   @override
   State<hereS> createState() => _hereSState();
 }
@@ -29,7 +31,7 @@ class _hereSState extends State<hereS> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sign Up"),
+        title: const Text("Sign Up"),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -42,8 +44,10 @@ class _hereSState extends State<hereS> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Enter first name.";
-                  } else
+                  } else {
                     null;
+                  return null;
+                  }
                 },
                 controller: fn,
                 keyboardType: TextInputType.name,
@@ -62,8 +66,10 @@ class _hereSState extends State<hereS> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Enter last name.";
-                  } else
+                  } else {
                     null;
+                  return null;
+                  }
                 },
                 controller: ln,
                 keyboardType: TextInputType.name,
@@ -80,12 +86,15 @@ class _hereSState extends State<hereS> {
                   top: 8.0, bottom: 8.0, left: 13.0, right: 13.0),
               child: TextFormField(
                 validator: (value) {
-                  if (value == null || value.isEmpty)
+                  if (value == null || value.isEmpty) {
                     return "Enter email address.";
-                  if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value))
+                  }
+                  if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
                     return "Invalid Email.";
-                  else
+                  } else {
                     null;
+                  return null;
+                  }
                 },
                 controller: ml,
                 keyboardType: TextInputType.emailAddress,
@@ -106,11 +115,13 @@ class _hereSState extends State<hereS> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Enter contact number.";
-                    } else
+                    } else {
                       null;
+                    return null;
+                    }
                   },
                   controller: ph,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Contact Number',
                       // hintText: "",
@@ -129,14 +140,17 @@ class _hereSState extends State<hereS> {
                     top: 8.0, bottom: 8.0, left: 13.0, right: 13.0),
                 child: TextFormField(
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return "Password creation is necessary.";
+                      }
                       if (!RegExp(
                               r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
-                          .hasMatch(value))
+                          .hasMatch(value)) {
                         return "Enter valid password.";
-                      else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: cp,
                     obscureText: obscureTextPc,
@@ -161,12 +175,15 @@ class _hereSState extends State<hereS> {
                     top: 8.0, bottom: 8.0, left: 13.0, right: 13.0),
                 child: TextFormField(
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return "Re-enter created password.";
-                      if (value != cp.text)
+                      }
+                      if (value != cp.text) {
                         return "Password doesn't match.";
-                      else
+                      } else {
                         null;
+                      return null;
+                      }
                     },
                     controller: rp,
                     obscureText: obscureTextPc,
@@ -190,13 +207,13 @@ class _hereSState extends State<hereS> {
               height: 13,
             ),
             ElevatedButton(
-              child: Text('Register', style: TextStyle(fontSize: 17)),
+              child: const Text('Register', style: TextStyle(fontSize: 17)),
               onPressed: () {
                 if (fk2.currentState!.validate()) {
                   rgoperation(fn.text, ln.text, ml.text, ph.text, rp.text);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
+                    MaterialPageRoute(builder: (context) => const MyApp()),
                   );
                 }
               },

@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class hereF extends StatefulWidget {
+  const hereF({super.key});
+
   @override
   State<hereF> createState() => _hereFState();
 }
@@ -9,6 +10,6 @@ class hereF extends StatefulWidget {
 class _hereFState extends State<hereF> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

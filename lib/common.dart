@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_leave/main.dart';
-import 'package:postgres/postgres.dart';
 
 class AppCommon {
   static var connection;

@@ -24,7 +24,7 @@ Future operation(email, pswd) async {
 }
 
 Future rgoperation(
-    first_name, last_name, email_id, phone_number, password) async {
+    firstName, lastName, emailId, phoneNumber, password) async {
   AppCommon.connection = PostgreSQLConnection(
       "192.168.1.78", // hostURL
       5432, // port
@@ -35,10 +35,10 @@ Future rgoperation(
 
   await AppCommon.connection.open();
   final data = <String, dynamic>{
-    "first_name": first_name,
-    "last_name": last_name,
-    "email_id": email_id,
-    "phone_number": phone_number,
+    "first_name": firstName,
+    "last_name": lastName,
+    "email_id": emailId,
+    "phone_number": phoneNumber,
     "password": password
   };
 
@@ -49,8 +49,8 @@ Future rgoperation(
       substitutionValues: data);
 }
 
-Future sboperation(from_date, to_date, num_of_days, reason, contact_name_dl,
-    contact_num_dl) async {
+Future sboperation(fromDate, toDate, numOfDays, reason, contactNameDl,
+    contactNumDl) async {
   AppCommon.connection = PostgreSQLConnection(
       "192.168.1.78", // hostURL
       5432, // port
@@ -61,12 +61,12 @@ Future sboperation(from_date, to_date, num_of_days, reason, contact_name_dl,
 
   await AppCommon.connection.open();
   final data = <String, dynamic>{
-    "from_date": from_date,
-    "to_date": to_date,
-    "num_of_days": num_of_days,
+    "from_date": fromDate,
+    "to_date": toDate,
+    "num_of_days": numOfDays,
     "reason": reason,
-    "contact_name_dl": contact_name_dl,
-    "contact_num_dl": contact_num_dl,
+    "contact_name_dl": contactNameDl,
+    "contact_num_dl": contactNumDl,
   };
 
   if (AppCommon.connection.isClosed == false) print("Connected");
