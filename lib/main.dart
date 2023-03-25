@@ -1,6 +1,5 @@
 // ignore_for_file: must_call_super
 
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_leave/forgotpswd.dart';
@@ -127,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               return "Enter email to login.";
                             } else {
                               null;
-                            return null;
+                              return null;
                             }
                           },
                           controller: mlc,
@@ -156,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   return "Enter password to login.";
                                 } else {
                                   null;
-                                return null;
+                                  return null;
                                 }
                               },
                               controller: pwd,
@@ -210,7 +209,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => const hereF()));
+                                            builder: (context) =>
+                                                const hereF()));
                                   },
                               ),
                             ),
@@ -228,7 +228,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             operation(mlc.text, pwd.text);
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const hereD()),
+                              MaterialPageRoute(
+                                  builder: (context) => const hereD()),
                             );
                           }
                         },
@@ -239,7 +240,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       RichText(
                         text: TextSpan(
                             text: "Don't have an account? ",
-                            style: const TextStyle(color: Colors.black, fontSize: 17),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 17),
                             children: <TextSpan>[
                               TextSpan(
                                 text: "Sign up",
@@ -250,7 +252,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => const hereS()));
+                                            builder: (context) =>
+                                                const hereS()));
                                   },
                               )
                             ]),
