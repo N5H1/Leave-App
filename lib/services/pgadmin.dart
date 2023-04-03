@@ -23,8 +23,7 @@ Future operation(email, pswd) async {
       substitutionValues: data);
 }
 
-Future rgoperation(
-    firstName, lastName, emailId, phoneNumber, password) async {
+Future rgoperation(firstName, lastName, emailId, phoneNumber, password) async {
   AppCommon.connection = PostgreSQLConnection(
       "192.168.1.78", // hostURL
       5432, // port
@@ -49,8 +48,8 @@ Future rgoperation(
       substitutionValues: data);
 }
 
-Future sboperation(fromDate, toDate, numOfDays, reason, contactNameDl,
-    contactNumDl) async {
+Future sboperation(
+    fromDate, toDate, numOfDays, reason, contactNameDl, contactNumDl) async {
   AppCommon.connection = PostgreSQLConnection(
       "192.168.1.78", // hostURL
       5432, // port

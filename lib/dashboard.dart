@@ -73,8 +73,8 @@ class _hereDState extends State<hereD> {
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
                   leading: const Icon(Icons.home, color: Colors.deepPurple),
-                  title:
-                      const Text("Home", style: TextStyle(color: Colors.deepPurple)),
+                  title: const Text("Home",
+                      style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => const hereD()));
@@ -86,8 +86,8 @@ class _hereDState extends State<hereD> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
-                  leading:
-                      const Icon(Icons.note_alt_outlined, color: Colors.deepPurple),
+                  leading: const Icon(Icons.note_alt_outlined,
+                      color: Colors.deepPurple),
                   title: const Text("Apply for leave",
                       style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
@@ -101,8 +101,8 @@ class _hereDState extends State<hereD> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
-                  leading:
-                      const Icon(Icons.note_alt_outlined, color: Colors.deepPurple),
+                  leading: const Icon(Icons.note_alt_outlined,
+                      color: Colors.deepPurple),
                   title: const Text("Show my form",
                       style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
@@ -116,7 +116,8 @@ class _hereDState extends State<hereD> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
-                  leading: const Icon(Icons.logout_sharp, color: Colors.deepPurple),
+                  leading:
+                      const Icon(Icons.logout_sharp, color: Colors.deepPurple),
                   title: const Text("Log out",
                       style: TextStyle(color: Colors.deepPurple)),
                   onTap: () {
@@ -141,6 +142,7 @@ class _hereDState extends State<hereD> {
                 },
               ),
             ),
+
             // Center(
             //   child: ElevatedButton(
             //     child: Text("Insert_Role", style: TextStyle(fontSize: 20)),
